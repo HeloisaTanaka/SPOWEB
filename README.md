@@ -3,9 +3,9 @@ Repositório destinado a anotações e atividades da discplina técnica Desenvol
 
 ## 🌐: Conteúdos abordados:
 - `Controle de fluxo`: if... else, while, do... while, for, switch... case
+- `Integração JS com HTML`: .getElement, .value, .innerHTML, addEventListener, event, etc
 - `Funções`: function, anonymous function, arrow function, callback
-- `Integração JS com HTML`: document.getElement, .value, .innerHTML, addEventListener
-- `POO JS`: classes, propriedades, métodos 
+- `POO`: objetos, classes, propriedades, métodos
 
 ## 📔 : Detalhes:
 - `Curso`: Desenvolvimento de Sistemas Integrado ao Ensino Médio

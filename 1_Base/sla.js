@@ -9,5 +9,4 @@ const meuArray = ['Rafael', 'Ana', 'Bia']
 console.log(quaseArray.toString(), meuArray)
 
 
-// Função de seta
-// Função de anônima
+

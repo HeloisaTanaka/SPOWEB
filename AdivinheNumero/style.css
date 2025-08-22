@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
+#fonte-pixel {
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 65px;
+}
+
+#tela-play{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(135deg, #fc51ff, #2be3e3) ;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-shadow: 2px 2px 0px black, 
+                 1px -1px 0px magenta,
+                 -1px -1px 0px cyan;
+    color: rgb(255, 255, 255);
+}
+
+#circulo{
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.70);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 0px;
+    border: 2px solid rgb(0, 0, 0); 
+}
+
+#botao-play{
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(0, 0, white, 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+
+#img{
+    width: 120px;
+    height: 120px;
+}
+
+#tela-jogo {
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+    background-color: #9698f1;
+    height: 100vh;
+}
+
+#coluna-central {
+    text-align: center;
+    background-color:white;
+    margin-top: 50px;
+    padding: 0px 50px 60px 50px;
+    border: 2px solid black;
+    height: 380px;
+    display: flex;
+    flex-direction: column
+}
+
+#coluna-central h1{
+    color: #9698f1;
+    text-shadow: 0px 2px 0px black;
+    height: 60px;
+}
+
+#forms {
+    margin: 10px 0;
+}
+
+#numero {
+    padding: 8px;
+    font-size: 16px;
+    width: 200px;
+    text-align: left;
+    border: 2px solid black;
+    width: 300px;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: #01fff2;
+    color: rgb(0, 0, 0);
+    border: 2px solid #078079;
+}
+
+button:hover {
+    background-color: #3edbd3;
+}
+
+#resetButton {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #9698f1;
+    color: rgb(0, 0, 0);
+    border: 2px solid #4d4e74;
+    margin-left: -3px;
+    margin-right: -3px;
+}
+
+#resetButton:hover {
+    background-color: #9781e6;
+}
+
+#mensagen {
+    margin-top: auto;
+}
+
+#tentativas {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+#palpites{
+    font-size: 18px;
+    text-align: left;
+    margin-top: 5px;
+}
+
+#status {
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin-top: 30px;
+}
+
+

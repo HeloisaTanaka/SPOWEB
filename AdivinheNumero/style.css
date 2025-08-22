@@ -97,13 +97,13 @@ button {
     font-size: 16px;
     cursor: pointer;
     margin-left: 10px;
-    background-color: #01fff2;
+    background-color: #9698f1;
     color: rgb(0, 0, 0);
-    border: 2px solid #078079;
+    border: 2px solid #4d4e74;
 }
 
 button:hover {
-    background-color: #3edbd3;
+    background-color: #9781e6;
 }
 
 #resetButton {

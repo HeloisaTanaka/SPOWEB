@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div id="tela-play">
         <p id="fonte-pixel" style="margin-top: -20px;">Adivinhe o número</p>
         <div id="circulo">
@@ -16,14 +17,14 @@
                 <img src="https://bing.com/th/id/BCO.94e4e2a3-a93d-4767-8d41-ac962d90198b.png" alt="play" id="img">
             </button>
         </div>
-    </div>
+    </div> 
 
     <div id="tela-jogo">
 
         <div id="coluna-central">
             <h1 id="fonte-pixel">Adivinhe o número</h1>
             <form id="forms">
-                <input type="number" id="numero" placeholder="Digite um número de 0 a 20">
+                <input type="number" id="numero" placeholder="Digite um número de 0 a 20" min="0" max="20">
                 <button type="submit" id="enviar">Enviar</button>
             </form>
             <p id="status">Estou pensando em um número entre 1 e 20...</p>

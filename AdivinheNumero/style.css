@@ -53,7 +53,7 @@
 }
 
 #tela-jogo {
-    display: none;
+    display: none;  
     justify-content: center;
     align-items: flex-start;
     width: 100%;

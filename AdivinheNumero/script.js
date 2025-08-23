@@ -1,79 +1,68 @@
-//Heloisa Lorencini Tanaka
-var ganhar = false
+//Helosia Lorencini Tanaka
 var numeroSecreto
-var tentativas
+var numeroUsuario
 var palpites
+var tentativas
+var vitoria
 
-
-document.getElementById("forms").addEventListener("submit", function(event){
-   event.preventDefault()
+document.getElementById('botao-play').addEventListener('click', function(){
+    document.getElementById('tela-play').style.display = 'none'
+    document.getElementById('tela-jogo').style.display = 'grid'
+    iniciarJogo()
 })
 
-document.getElementById("botao-play").addEventListener('click', function(){
-   document.getElementById('tela-jogo').style.display = 'grid'
-   document.getElementById("tela-play").style.display = 'none'
-   comecarJogo()
+document.getElementById('forms').addEventListener('submit', function(event){
+    event.preventDefault()
 })
 
-document.getElementById('resetButton').addEventListener('click', function(){    
-   comecarJogo() 
-   document.getElementById("status").innerHTML = "Mais um round!" 
-   document.getElementById("numero").value = "" 
-   document.getElementById("valorTentativas").innerHTML = "10" 
-   document.getElementById("numeroPalpites").innerHTML = ""
-})
+function prepararElementos(){
+    numeroSecreto = Math.floor(Math.random() * 21)
+    palpites = []
+    tentativas = 10
+    vitoria = false
+}
 
 function verificarPalpite(numeroSecreto, numeroUsuario){
-   if (numeroSecreto == numeroUsuario){
-       ganhar = true
-       document.getElementById("status").style.textAlign = 'center'
-       document.getElementById("status").innerHTML = "Parabéns, você ganhou!"
-   }
-   else if (numeroSecreto > numeroUsuario){
-       console.log('Numero secreto é maior')
-       document.getElementById('status').innerHTML = "O número secreto é maior."
-   }
-   else {
-       console.log('Numero secreto é menor')
-       document.getElementById("status").innerHTML = "O número secreto é menor"
-   }
-}
-
-function exibirMensagem(tentativas, palpites){
-   document.getElementById("valorTentativas").innerHTML = tentativas
-   document.getElementById("numeroPalpites").innerHTML = palpites
-}
-
-function comecarJogo(){
-   numeroSecreto = Math.floor(Math.random() * 21)
-   tentativas = 10
-   palpites = []
-   ganhar = false
-
-
-   document.getElementById('enviar').removeEventListener("click", respondeClick);
-
-
-   document.getElementById('enviar').addEventListener("click", respondeClick);
-}
-
-function respondeClick(){
-   var numeroUsuario = document.getElementById("numero").value
-   document.getElementById('numero').value = undefined
-
-   if (!ganhar){
-        if (numeroUsuario>=0 && numeroUsuario<=20){
-            if (tentativas > 1){
-                verificarPalpite(numeroSecreto, numeroUsuario)
-                tentativas--
-                palpites.push(numeroUsuario)
-            } else {
-                tentativas = 0
-                document.getElementById("status").innerHTML = "Poxa, você perdeu... Tentativas esgotadas"
-            }
-            exibirMensagem(tentativas, palpites)
-        } else {
-            document.getElementById('status').innerHTML = 'Digite um número válido! (0 - 20)'
-        }
+    if(numeroSecreto>numeroUsuario){
+        document.getElementById('status').innerHTML = 'Número secreto é maior'
+    }
+    else if(numeroSecreto<numeroUsuario){
+        document.getElementById('status').innerHTML = 'Número secreto é menor'
+    }
+    else {
+        document.getElementById('status').innerHTML = 'Parabéns, você venceu!'
+        vitoria = true
     }
 }
+
+function exibirElementos(tentativas, palpites){
+    document.getElementById('numero').value = undefined
+    document.getElementById('valorTentativas').innerHTML = tentativas
+    document.getElementById('numeroPalpites').innerHTML = palpites.join(', ')
+}
+
+function iniciarJogo(){
+
+    prepararElementos()
+
+    document.getElementById('enviar').addEventListener('click', function(){
+        if(tentativas>0){
+            numeroUsuario = parseInt(document.getElementById('numero').value)
+            if(numeroUsuario>=0 && numeroUsuario<=20 && numeroUsuario!=undefined){
+                palpites.push(numeroUsuario)
+                tentativas--
+                exibirElementos(tentativas, palpites)
+                verificarPalpite(numeroSecreto, numeroUsuario)
+            }
+        }
+        if(tentativas==0 && vitoria==false){
+            document.getElementById('status').innerHTML = 'Poxa... Você não é um bom adivinho'
+        }
+    })
+} 
+
+document.getElementById('resetButton').addEventListener('click', function(){
+    prepararElementos()
+    exibirElementos(tentativas, palpites)
+    document.getElementById('status').innerHTML = 'Mais um round!'
+})
